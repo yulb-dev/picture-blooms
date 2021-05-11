@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
+import React, { Component } from 'react'
+import { Route, Switch, withRouter } from 'react-router-dom';
+import routes from './router/index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MainNavBar from './Components/content/MainNavBar/MainNavBar'
+
+export const { Provider, Consumer } = React.createContext("router");
+class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        <Switch>
+          {routes.map((item) =>
+            <Route {...item} key={item.path} />
+          )}
+        </Switch>
+        <Provider value={this.props.history}>
+          <MainNavBar />
+        </Provider>
+      </div>
+    )
+  }
+
 }
 
-export default App;
+
+export default withRouter(App);

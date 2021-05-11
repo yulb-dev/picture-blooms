@@ -1,0 +1,45 @@
+.HomeSearchBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  height: 44px;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+  .box1 {
+    height: 100%;
+    width: 90%;
+    border: 1px solid #fff;
+    background-color: #f6f5f0;
+    border-radius: 5px;
+    padding: 3px;
+    // box-shadow: 9px 9px 16px rgba(189, 189, 189, 0.61),
+    //   -9px -9px 16px rgba(255, 255, 255, 0.5);
+    .box2 {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      border-radius: 3px;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: inset 10px 10px 15px -10px #c3c3c3,
+        inset -10px -10px 15px -10px #fff;
+      .icon {
+        margin-left: 10px;
+        height: 60%;
+      }
+      input {
+        margin-left: 10px;
+        border: none;
+        height: 90%;
+        width: 70%;
+        background-color: transparent;
+        outline: 0;
+      }
+    }
+  }
+}

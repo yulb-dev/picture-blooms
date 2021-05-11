@@ -7,3 +7,7 @@ CardListReq.interceptors.response.use(res => {
 export function getCardList(page) {
     return CardListReq.get('/cardList', { params: { page } })
 }
+
+export function isRefresh() {
+    return CardListReq.get('/isRefresh')
+}

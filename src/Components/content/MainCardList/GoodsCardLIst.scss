@@ -11,9 +11,41 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
+    top: -50px;
     transition: all 0.4s;
-    
+    //定义动画
+    @keyframes turn {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      25% {
+        -webkit-transform: rotate(90deg);
+      }
+      50% {
+        -webkit-transform: rotate(180deg);
+      }
+      75% {
+        -webkit-transform: rotate(270deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    .refreshBox {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: rgb(182, 182, 182);
+      font-size: 16px;
+      .icon {
+        margin-right: 10px;
+        fill: white;
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
   .GoodsCard {
     width: 100%;

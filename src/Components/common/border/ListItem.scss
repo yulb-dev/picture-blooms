@@ -1,0 +1,40 @@
+.listItem {
+  margin-bottom: 20px;
+  position: relative;
+  .context {
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    img {
+      display: block;
+      filter: brightness(50%);
+    }
+    p {
+      color: white;
+      font-size: 23px;
+      letter-spacing: 2px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .left-border {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-50%);
+    z-index: 100;
+    div {
+      background-color: #1c1028;
+      border-radius: 50%;
+      height: 10px;
+      width: 100%;
+    }
+  }
+}

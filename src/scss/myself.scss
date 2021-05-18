@@ -1,0 +1,57 @@
+.Myself-not-login {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#ffffff, #dddddd);
+  padding: 40px 25px 0 25px;
+  .title {
+    text-align: center;
+    padding: 20px 0;
+    color: #4a5c77;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    font-weight: bold;
+  }
+  .title2 {
+    text-align: center;
+    color: #415068;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: '微软雅黑';
+    letter-spacing: 1px;
+  }
+  .registered {
+    width: 100%;
+    padding: 25px 20px;
+    background-color: rgba(255, 255, 255, 0);
+    P {
+      background-color: #1c1028;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      line-height: 46px;
+      border-radius: 23px;
+      letter-spacing: 2px;
+    }
+  }
+  span {
+    color: #696969;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+  }
+  .login {
+    width: 100%;
+    padding: 25px 20px 0 20px;
+    background-color: rgba(255, 255, 255, 0);
+    P {
+      border: 1px solid #1c1028;
+      background-color: white;
+      font-size: 15px;
+      color: #1c1028;
+      text-align: center;
+      line-height: 46px;
+      border-radius: 23px;
+      letter-spacing: 2px;
+    }
+  }
+}

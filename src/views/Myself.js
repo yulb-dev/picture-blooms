@@ -23,12 +23,16 @@ class Myself extends Component {
     render() {
         if (this.props.user) {
             return (
-                <UserIsLogin user={this.props.user} />
+                <UserIsLogin
+                    user={this.props.user}
+                    back={this.back.bind(this)}
+                    toSetUp={this.toSetUp.bind(this)}
+                />
             )
         }
         else {
             if (this.state.isUser) {
-                return (<div></div>)
+                return (<div className='Myself-not-login'></div>)
             }
             return (
                 <UserNotLogin toLogin={this.toLogin.bind(this)} />
@@ -44,6 +48,12 @@ class Myself extends Component {
             //注册
             this.props.history.push('/registered')
         }
+    }
+    back() {
+        this.props.history.goBack()
+    }
+    toSetUp() {
+        this.props.history.push('/setUp')
     }
 
 }

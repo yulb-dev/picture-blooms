@@ -15,3 +15,7 @@ export function isRefresh() {
 export function getCard(id) {
     return mySelf.get('/getCard', { params: { id } })
 }
+
+export function delFavorite(data) {
+    return mySelf.get('/delFavorite', { params: data })
+}

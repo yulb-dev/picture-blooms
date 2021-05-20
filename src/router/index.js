@@ -3,6 +3,7 @@ import addPage from '../views/addPage'
 import Myself from '../views/Myself'
 import Login from '../views/login'
 import Registered from '../views/registered'
+import SetUp from '../views/SetUp'
 import { Redirect } from 'react-router-dom';
 import { increment } from '../features/counter/counterSlice'
 import { connect } from 'react-redux'
@@ -28,6 +29,7 @@ const routes = [
     { path: '/myself', component: connect(mapStateToProps, mapDispatchToProps)(Myself) },
     { path: '/login', component: connect(mapStateToProps, mapDispatchToProps)(Login) },
     { path: '/registered', component: connect(mapStateToProps, mapDispatchToProps)(Registered) },
+    { path: '/setUp', component: connect(mapStateToProps, mapDispatchToProps)(SetUp) },
 
 
 ]

@@ -19,3 +19,11 @@ export function getCard(id) {
 export function delFavorite(data) {
     return mySelf.get('/delFavorite', { params: data })
 }
+
+export function getDynamic(id) {
+    return mySelf.get('/dynamic', { params: { id } })
+}
+
+export function getIdol(id) {
+    return mySelf.get('/idol', { params: { id } })
+}

@@ -1,0 +1,95 @@
+.myself-dynamic {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 20px 56px 20px;
+  .dynamicItem {
+    width: 100%;
+    padding: 25px 10px 10px 10px;
+    margin-bottom: 26px;
+    border-radius: 3px;
+    background-color: #eeeeee;
+    color: white;
+    .dynamicItem-top {
+      height: 100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      div {
+        border-radius: 5px;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #261a32;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      p {
+        padding-left: 13px;
+        width: 50%;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      p:last-child {
+        color: rgb(138, 138, 138);
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+  .top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    margin-bottom: 40px;
+    svg {
+      fill: white;
+      width: 22px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 20px;
+      margin-left: 30px;
+      color: rgb(212, 212, 212);
+    }
+  }
+  .dynamicItem-center {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid rgb(216, 216, 216);
+    color: rgb(138, 138, 138);
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 0;
+    margin: 11px 0;
+    svg {
+      fill: rgb(138, 138, 138);
+      width: 18px;
+      height: 18px;
+      margin: 0 6px 0 25px;
+    }
+  }
+  .dynamicItem-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      font-size: 13px;
+      color: rgb(56, 56, 56);
+      letter-spacing: 2px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border: 1px solid rgb(138, 138, 138);
+      margin: 0 6px 0 20px;
+      border-radius: 8px;
+    }
+  }
+}

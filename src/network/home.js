@@ -11,3 +11,7 @@ export function getCardList(page) {
 export function isRefresh() {
     return CardListReq.get('/isRefresh')
 }
+
+export function getUserMessage(id) {
+    return CardListReq.get('/userMessage', { params: { id } })
+}

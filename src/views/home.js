@@ -3,8 +3,6 @@ import { getCardList, isRefresh } from '../network/home'
 import GoodsCardLIst from '../Components/content/MainCardList/GoodsCardList'
 import HomeSearchBar from '../Components/content/MainhomeSearchBar/MainhomeSearchBar'
 import '../scss/home.scss'
-// import store from '../app/store'
-
 
 class Home extends Component {
     constructor(props) {

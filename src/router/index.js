@@ -5,7 +5,7 @@ import Login from '../views/login'
 import Registered from '../views/registered'
 import SetUp from '../views/SetUp'
 import { Redirect } from 'react-router-dom';
-import { increment } from '../features/counter/counterSlice'
+import { increment, setUp } from '../features/counter/counterSlice'
 import { connect } from 'react-redux'
 
 
@@ -19,6 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         increment: (...args) => dispatch(increment(...args)),
+        setUp: (...args) => dispatch(setUp(...args)),
     }
 };
 

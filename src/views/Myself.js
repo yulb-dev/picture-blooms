@@ -53,7 +53,7 @@ class Myself extends Component {
         this.props.history.goBack()
     }
     toSetUp() {
-        this.props.history.push('/setUp')
+        this.props.history.push({ pathname: '/setUp', query: { myselfcome: true } })
     }
 
 }

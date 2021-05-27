@@ -7,3 +7,12 @@ Registered.interceptors.response.use(res => {
 export function isRegistered(data) {
     return Registered.post('/', data)
 }
+
+export function isSetUp(data) {
+    return Registered.post('/setUp', data)
+}
+
+export function isQuit() {
+    return Registered.post('/exit')
+}
+

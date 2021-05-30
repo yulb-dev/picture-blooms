@@ -29,4 +29,10 @@ const Login = axios.create({
     withCredentials: true,
 });
 
-export { CardListReq, mySelf, Registered, Login }
+const Details = axios.create({
+    baseURL: port + '/details',
+    timeout: 1000,
+    withCredentials: true,
+});
+
+export { CardListReq, mySelf, Registered, Login, Details }

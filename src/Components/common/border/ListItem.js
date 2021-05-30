@@ -4,6 +4,7 @@ import { getCard } from '../../../network/mySelf'
 import { deleteFavorite } from '../../../features/counter/counterSlice'
 import { connect } from 'react-redux'
 import { delFavorite } from '../../../network/mySelf'
+import alertBox from '../../../alertbox/alertbox'
 
 const mapStateToProps = (state) => {
     return {
@@ -51,6 +52,7 @@ class ListItem extends Component {
     }
     deleteFavorite() {
         this.setState({ isDelete: true })
+        alertBox("删除成功")
         setTimeout(() => {
             this.props.deleteFavorite(this.props.user.favorites.indexOf(this.props.cardId))
             delFavorite({ userid: this.props.user._id, cardid: this.props.cardId }).then((data) => {

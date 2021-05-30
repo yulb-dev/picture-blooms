@@ -17,7 +17,7 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="home">
+            <div className={this.props.className}>
                 <HomeSearchBar />
                 <GoodsCardLIst cardList={this.state.cardList} refresh={this.refresh.bind(this)} />
             </div>

@@ -27,3 +27,11 @@ export function getDynamic(id) {
 export function getIdol(id) {
     return mySelf.get('/idol', { params: { id } })
 }
+
+export function delIdol(data) {
+    return mySelf.get('/delIdol', { params: data })
+}
+
+export function pushIdol(data) {
+    return mySelf.get('/pushIdol', { params: data })
+}

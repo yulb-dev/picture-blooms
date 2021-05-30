@@ -3,6 +3,7 @@ import { isLogin } from '../network/login'
 import '../scss/Login.scss'
 import notLoginImg from '../image/notLogin.png'
 import beforeRouteUpdate from '../router/beforeRouteUpdate'
+import promptBox from '../alertbox/alertbox'
 
 class Login extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class Login extends Component {
         if (this.state.username.replace(/^\s*|\s*$/g, "") && this.state.password.replace(/^\s*|\s*$/g, "")) {
             isLogin({ name: this.state.username, password: this.state.password }).then((data) => {
                 if (data && !data.keyValue) {
+                    promptBox('欢迎回来：' + data.name)
                     this.props.increment(data)
                     this.props.history.replace('/myself')
                 } else {

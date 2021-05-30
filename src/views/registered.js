@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { isRegistered } from '../network/registered'
 import '../scss/registered.scss'
 import beforeRouteUpdate from '../router/beforeRouteUpdate'
+import alertBox from '../alertbox/alertbox'
 
 class Registered extends Component {
     constructor(props) {
         super(props)
         beforeRouteUpdate.call(this)
         this.state = {
-            avatar: 'http://118.190.63.62:6060/img/userAvatar/avatar.png',
+            avatar: 'http://localhost:6060/img/userAvatar/avatar.png',
             regName: /^[a-zA-Z0-9_-]{4,16}$/,
             regPassword: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
             username: '',
@@ -73,6 +74,7 @@ class Registered extends Component {
                     this.setState({ errorPrompt: "用户名已存在" })
                 }
                 else {
+                    alertBox('注册成功！')
                     this.props.increment(data)
                     this.props.history.replace('/myself')
                 }

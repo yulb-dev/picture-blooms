@@ -3,9 +3,6 @@ import imgsrc from '../../../image/message.png'
 
 
 class UserNotLogin extends Component {
-    // constructor(props){
-
-    // }
     render() {
         return (
             <div className='Myself-not-login'>

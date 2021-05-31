@@ -188,6 +188,10 @@
         width: 22px;
         height: 22px;
       }
+      .noFavorite {
+        color: #506172;
+        fill: #506172;
+      }
     }
   }
   .comments {
@@ -239,10 +243,11 @@
           }
         }
         .text {
+          white-space: pre-line;
           font-size: 16px;
           color: #506172;
           letter-spacing: 0.1rem;
-          line-height: 26px;
+          line-height: 1.4;
         }
       }
       .post-comment {

@@ -3,6 +3,7 @@ import UserNotLogin from '../Components/content/MainUserNotLogin/userNotLogin'
 import UserIsLogin from '../Components/content/MainUserIsLogin/userIsLogin'
 import { getUser } from '../network/mySelf'
 import '../scss/myself.scss'
+import alertBox from '../alertbox/alertbox'
 
 class Myself extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Myself extends Component {
             getUser().then((data) => {
                 if (data && !data.keyValue) {
                     this.props.increment(data)
+                    alertBox('登录成功！')
                 } else {
                     this.setState({ isUser: false })
                 }

@@ -5,7 +5,7 @@ import Registered from '../views/registered'
 import SetUp from '../views/SetUp'
 import DetailsPage from '../views/DetailsPage'
 import { Redirect } from 'react-router-dom';
-import { increment, setUp, deleteIdol, becomeIdol } from '../features/counter/counterSlice'
+import { increment, setUp, deleteIdol, becomeIdol, becomeFavorite, deleteFavorite, publishAnArticle } from '../features/counter/counterSlice'
 import { connect } from 'react-redux'
 
 
@@ -22,13 +22,16 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         setUp: (...args) => dispatch(setUp(...args)),
         deleteIdol: (...args) => dispatch(deleteIdol(...args)),
         becomeIdol: (...args) => dispatch(becomeIdol(...args)),
+        becomeFavorite: (...args) => dispatch(becomeFavorite(...args)),
+        deleteFavorite: (...args) => dispatch(deleteFavorite(...args)),
+        publishAnArticle: (...args) => dispatch(publishAnArticle(...args))
     }
 };
 
 const routes = [
     { path: '/', exact: true, render() { return <Redirect to="/home" /> } },
     // { path: '/home', component: Home },
-    { path: '/addPage', component: addPage },
+    { path: '/addPage', component: connect(mapStateToProps, mapDispatchToProps)(addPage) },
     { path: '/myself', component: connect(mapStateToProps, mapDispatchToProps)(Myself) },
     { path: '/login', component: connect(mapStateToProps, mapDispatchToProps)(Login) },
     { path: '/registered', component: connect(mapStateToProps, mapDispatchToProps)(Registered) },

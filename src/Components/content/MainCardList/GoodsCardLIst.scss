@@ -1,16 +1,15 @@
-@import url('../../../../node_modules/pattern.css/dist/pattern.min.css');
-
 .GoodsCardLIst {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #05192d00;
-  border-radius: 20px;
+  background-color: #f9f9ff;
+  // border-radius: 20px;
   position: relative;
+  padding: 16px 15px 18px 15px;
   .GoodsCardBOx {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     top: -50px;
     transition: all 0.4s;
     //定义动画
@@ -36,12 +35,12 @@
       height: 50px;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      color: rgb(182, 182, 182);
+      align-items: center;
+      color: #152035;
       font-size: 16px;
       .icon {
         margin-right: 10px;
-        fill: white;
+        fill: #f67280;
         width: 30px;
         height: 30px;
       }
@@ -50,19 +49,30 @@
   .GoodsCard {
     width: 100%;
     height: 100%;
-    background-color: #f3f9ff;
+    background-color: #f9f9ff;
     margin-bottom: 18px;
-    overflow: hidden;
+    // overflow: hidden;
+    padding: 50px 0 0 0;
     position: relative;
     border-radius: 20px;
+    .box {
+      height: 100%;
+      background-color: white;
+      border-radius: 20px;
+      -webkit-box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+      box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+      color: #152035;
+    }
     .imgBox {
       width: 100%;
       height: 41%;
-      overflow: auto;
+      padding: 0 30px;
       img {
         display: block;
         width: 100%;
-        border-radius: 20px 20px 0 0;
+        border-radius: 20px;
+        transform: translateY(-30px);
+        box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
       }
     }
     .cardLabels {
@@ -70,7 +80,7 @@
       font-size: 15px;
       line-height: 15px;
       text-align: right;
-      padding: 13px 20px 0 0;
+      padding-right: 20px;
       span {
         padding: 6px 10px;
         border-radius: 4px;
@@ -82,59 +92,60 @@
       }
     }
     .cardTitle {
-      color: #343434;
       padding-left: 25px;
       font-size: 28px;
       line-height: 46px;
     }
     .cardContent {
       width: 100%;
-      padding: 5px 25px 20px 25px;
-      height: 70px;
+      padding: 0px 25px 0 25px;
+      height: 78px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
-      color: #666666;
       letter-spacing: 0.1rem;
       font-size: 15px;
-      line-height: 22px;
+      line-height: 26px;
+      color: #506172;
     }
     .cardLikes {
       padding-left: 26px;
-      letter-spacing: 0.8rem;
+      letter-spacing: 0.9rem;
       display: flex;
       align-items: center;
       font-size: 15px;
-      color: #555555;
+      color: #f67280;
       position: absolute;
       bottom: 60px;
+      font-weight: bold;
       .icon {
-        fill: #555555;
-        margin-right: 4px;
+        fill: #f67280;
+        margin-right: 7px;
       }
     }
     .cardBto {
       width: 100%;
       height: 50px;
-      border-top: 1px solid #c0c0c0;
+      border-top: 1px solid #d4d4d4;
       position: absolute;
       bottom: 0;
       display: flex;
       justify-content: space-between;
-      background: #f3f9ff;
+      background: white;
+      border-radius: 0 0 20px 20px;
+      color: #506172;
       div {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #555555;
         font-size: 13px;
       }
       div:nth-child(1) {
         width: 22%;
         border-radius: 0 3px 3px 0;
-        border-right: 1px solid #c0c0c0;
+        border-right: 1px solid #d4d4d4;
       }
       div:nth-child(2) {
         width: 70%;
@@ -147,13 +158,17 @@
           margin: 0 8px;
         }
         span {
-          color: rgb(104, 104, 104) 0;
-          margin-left: 6px;
+          width: 4px;
+          height: 4px;
+          background-color: #f67280;
+          border-radius: 50%;
+          display: block;
+          margin: 0 6px;
         }
       }
       .icon {
         margin-right: 4px;
-        fill: #555555;
+        fill: #3f4d58;
       }
     }
   }

@@ -10,19 +10,17 @@ class App extends Component {
   render() {
     const { pathname } = this.props.location
     return (
-      <div className='App'>
-        <Provider value={this.props.history}>
+      <Provider value={this.props.history}>
+        <div className='App'>
           <Home className={pathname === '/home' ? 'home' : 'home no'} />
-        </Provider>
-        <Switch>
-          {routes.map((item) =>
-            <Route {...item} key={item.path} />
-          )}
-        </Switch>
-        <Provider value={this.props.history}>
+          <Switch>
+            {routes.map((item) =>
+              <Route {...item} key={item.path} />
+            )}
+          </Switch>
           <MainNavBar />
-        </Provider>
-      </div>
+        </div>
+      </Provider>
     )
   }
 

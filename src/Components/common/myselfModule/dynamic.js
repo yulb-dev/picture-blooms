@@ -12,7 +12,7 @@ class Dynamic extends Component {
                 </div>
                 {
                     this.props.dynamic.map((item) => (
-                        <DynamicItem cardId={item} key={item} />
+                        <DynamicItem cardId={item} key={item + ''} />
                     ))
                 }
             </div>

@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { getCardList, isRefresh } from '../network/home'
 import GoodsCardLIst from '../Components/content/MainCardList/GoodsCardList'
-import HomeSearchBar from '../Components/content/MainhomeSearchBar/MainhomeSearchBar'
+import HomeSearchBar from '../Components/content/MainhomeSearchBar/New'
 import '../scss/home.scss'
 
 class Home extends Component {

@@ -17,7 +17,7 @@ export function getCard(id) {
 }
 
 export function delFavorite(data) {
-    return mySelf.get('/delFavorite', { params: data })
+    return mySelf.post('/delFavorite', data)
 }
 
 export function getDynamic(id) {

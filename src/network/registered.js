@@ -16,3 +16,7 @@ export function isQuit() {
     return Registered.post('/exit')
 }
 
+export function pushCard(data) {
+    return Registered.post('/pushCard', data)
+}
+

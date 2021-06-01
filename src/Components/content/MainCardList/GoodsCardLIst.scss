@@ -93,7 +93,7 @@
     }
     .cardTitle {
       padding-left: 25px;
-      font-size: 28px;
+      font-size: 26px;
       line-height: 46px;
     }
     .cardContent {
@@ -109,6 +109,8 @@
       font-size: 15px;
       line-height: 26px;
       color: #506172;
+      white-space: pre-line;
+      word-wrap: break-word;
     }
     .cardLikes {
       padding-left: 26px;
@@ -141,15 +143,21 @@
         justify-content: center;
         align-items: center;
         font-size: 13px;
-      }
-      div:nth-child(1) {
         width: 22%;
         border-radius: 0 3px 3px 0;
         border-right: 1px solid #d4d4d4;
       }
-      div:nth-child(2) {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
         width: 70%;
+        display: block;
+        display: flex;
         justify-content: flex-end;
+        color: #506172;
+        text-decoration: none;
         img {
           display: block;
           height: 38px;

@@ -50,6 +50,7 @@
       font-size: 16px;
       line-height: 23px;
       height: 100%;
+      color: #152035;
       span {
         font-size: 14px;
         color: rgb(117, 117, 117);
@@ -86,5 +87,7 @@
     height: 0px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
   }
 }

@@ -1,40 +1,61 @@
 import React, { Component } from 'react'
 import { getDynamic } from '../../../network/mySelf'
 import { Consumer } from "../../../App";
+import { delDynamic } from '../../../features/counter/counterSlice'
+import { connect } from 'react-redux'
+import { pullDynamic } from '../../../network/mySelf'
+import alertBox from '../../../alertbox/alertbox'
+
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.counter.user
+    }
+};
+
+//将action的所有方法绑定到props上
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        delDynamic: (...args) => dispatch(delDynamic(...args)),
+    }
+};
 
 class DynamicItem extends Component {
     constructor(props) {
         super(props)
         getDynamic(this.props.cardId).then((data) => {
-            this.setState({ ...data })
+            this.setState({ ...data, isDel: false })
         })
     }
     render() {
         if (this.state) {
-            const { imgsrc, title, ctime, comment, likesnum } = this.state
+            const { imgsrc, title, ctime, comment, likesnum, isDel } = this.state
             let date = new Date(ctime)
             return (
                 <Consumer>
                     {
                         (history) => {
                             return (
-                                <div className='dynamicItem'>
-                                    <div className='dynamicItem-top' onClick={this.goDetails.bind(this, history)} >
-                                        <div>
-                                            <img src={imgsrc} alt='img' />
+                                <div className={isDel ? 'isDel' : 'outBox'}>
+                                    <div className='dynamicItem'>
+                                        <div className='dynamicItem-top' onClick={this.goDetails.bind(this, history)} >
+                                            <div>
+                                                <img src={imgsrc} alt='img' />
+                                            </div>
+                                            <p>{title}</p>
+                                            <p>{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</p>
                                         </div>
-                                        <p>{title}</p>
-                                        <p>{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</p>
-                                    </div>
-                                    <div className='dynamicItem-center'>
-                                        <svg t="1622117859918" className="icon" viewBox="0 0 1058 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2553"><path d="M330.744242 885.372121l194.779798-129.861818 16.665859-11.106263h383.844848c36.486465 0 66.19798-29.659798 66.19798-66.146262v-529.19596c0-36.434747-29.711515-66.107475-66.19798-66.107475H132.305455c-36.486465 0-66.146263 29.659798-66.146263 66.107475v529.19596c0 36.486465 29.659798 66.146263 66.146263 66.146262h198.438787v140.968081m-66.146262 123.578182V810.550303H132.305455c-73.024646 0-132.305455-59.216162-132.305455-132.292525v-529.19596C0 76.024242 59.267879 16.808081 132.305455 16.808081h793.742222c73.076364 0 132.357172 59.216162 132.357171 132.240808v529.195959c0 73.076364-59.267879 132.292525-132.357171 132.292526h-363.830303L264.59798 1008.950303z m0 0" p-id="2554"></path></svg>
-                                        {comment.length}
-                                        <svg t="1622117925839" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4067"><path d="M705.403848 64.46829c-76.854389 0-148.311861 38.554084-195.34506 102.123912-47.007617-63.587224-118.448716-102.123912-195.344037-102.123912-138.54031 0-251.251348 123.228579-251.251348 274.711665 0 90.369194 40.368406 153.767106 72.820516 204.702172 94.311992 147.95268 331.443761 332.071048 341.487511 339.834872 9.676383 7.479345 20.989033 11.222599 32.275077 11.222599 11.31265 0 22.607904-3.744277 32.270984-11.222599 10.057053-7.763824 247.205195-191.882192 341.488535-339.834872 32.466436-50.939159 72.849168-114.332978 72.849168-204.702172C956.655196 187.69687 843.939041 64.46829 705.403848 64.46829L705.403848 64.46829zM837.929164 508.917802c-89.77056 140.875494-327.883679 324.878229-327.883679 324.878229s-238.086513-184.002734-327.887772-324.878229c-33.120328-52.005444-62.774719-101.438297-62.774719-169.736822 0-117.939109 87.443561-213.58447 195.331757-213.58447 79.730902 0 148.175761 52.308343 178.538279 127.194914l0-0.37146 0.080841 0c2.26253 7.806803 8.857738 13.501502 16.711614 13.501502 7.880481 0 14.474666-5.694699 16.720823-13.501502l0.230244 0c30.435173-74.66349 98.785887-126.823454 178.406273-126.823454 107.86159 0 195.331757 95.64536 195.331757 213.58447C900.734582 407.479505 871.075075 456.911334 837.929164 508.917802L837.929164 508.917802zM837.929164 508.917802" p-id="4068"></path></svg>
-                                        {likesnum}
-                                    </div>
-                                    <div className='dynamicItem-bottom'>
-                                        <p>编辑</p>
-                                        <p>删除</p>
+                                        <div className='dynamicItem-center'>
+                                            <svg t="1622300893388" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8014"><path d="M1015.296 381.715692c-8.743385-26.466462-31.350154-45.686154-58.368-49.860923l-263.955692-40.96L578.363077 42.692923C566.311385 16.620308 540.396308 0 512.039385 0S457.767385 16.620308 445.715692 42.692923L331.027692 290.894769l-263.955692 40.96C39.975385 336.029538 17.447385 355.249231 8.704 381.715692c-8.743385 26.466462-2.126769 55.689846 17.014154 75.539692L219.096615 658.510769 174.276923 937.668923c-4.489846 28.120615 7.168 56.241231 30.011077 72.782769C216.969846 1019.431385 231.699692 1024 246.508308 1024c12.130462 0 24.418462-3.150769 35.367385-9.216l230.084923-125.085538 230.084923 125.085538C753.152 1020.849231 765.361231 1024 777.570462 1024c14.808615 0 29.538462-4.568615 42.220308-13.548308 22.843077-16.541538 34.500923-44.662154 29.932308-72.782769L804.903385 658.510769l193.457231-201.255385C1017.422769 437.326769 1023.960615 408.182154 1015.296 381.715692z" p-id="8015"></path></svg>
+                                            <span>{likesnum}</span>
+                                            <svg t="1622300991384" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9974"><path d="M827.68 762.56 529.44 762.56 289.28 929.76 289.28 762.56l-92.8 0c-82.08 0-148.48-66.56-148.48-148.48L48 242.88c0-82.08 66.56-148.48 148.48-148.48l631.2 0c82.08 0 148.48 66.56 148.48 148.48l0 371.36C976.16 696.16 909.6 762.56 827.68 762.56z" p-id="9975"></path><path d="M252.16 363.52l519.84 0c10.24 0 18.56-8.32 18.56-18.56s-8.32-18.56-18.56-18.56L252.16 326.4c-10.24 0-18.56 8.32-18.56 18.56S241.76 363.52 252.16 363.52zM771.84 474.88 252.16 474.88c-10.24 0-18.56 8.32-18.56 18.56 0 10.24 8.32 18.56 18.56 18.56l519.84 0c10.24 0 18.56-8.32 18.56-18.56C790.56 483.2 782.24 474.88 771.84 474.88z" p-id="9976"></path></svg>
+                                            {comment.length}
+
+                                        </div>
+                                        <div className='dynamicItem-bottom'>
+                                            <p>编辑</p>
+                                            <p onClick={this.delDynamic.bind(this)}>删除</p>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -47,8 +68,21 @@ class DynamicItem extends Component {
             return null
         }
     }
+    delDynamic() {
+        this.setState({ isDel: true })
+        pullDynamic(this.state._id).then((data) => {
+            if (data.keyValue) {
+                throw (data)
+            }
+            let s = setTimeout(() => {
+                this.props.delDynamic(this.props.user.dynamic.indexOf(this.state._id))
+                alertBox('删除成功！')
+                clearTimeout(s)
+            }, 400);
+        })
+    }
     goDetails(history) {
         history.push({ pathname: '/detailsPage', query: { cardId: this.props.cardId } })
     }
 }
-export default DynamicItem
+export default connect(mapStateToProps, mapDispatchToProps)(DynamicItem)

@@ -15,7 +15,7 @@ class MyselfModel extends Component {
             <div className='Myself-login'>
                 <div className='myself-idol'>
                     <div className='top'>
-                        <svg onClick={this.props.goMyselfMain} t="1621256688157" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3236"><path d="M781.566553 1011.699354L168.659015 540.690841c-20.402945-16.0254-20.402945-42.009075 0-58.034474L781.566553 11.647854c20.377345-16.0254 53.400932-16.0254 73.778278 0 20.377345 15.9998 20.377345 42.009075 0 58.008875L279.326431 511.686404l576.0184 442.004075c20.377345 15.9998 20.377345 41.983475 0 58.008875-20.377345 16.0254-53.400932 16.0254-73.778278 0z" p-id="3237"></path></svg>
+                        <svg t="1622294932600" onClick={this.props.goMyselfMain} className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2867"><path d="M398.259 312.832V85.348L0.007 483.503 398.259 881.82V648.502c284.4 0 483.565 91.004 625.735 290.15-56.838-284.472-227.502-568.82-625.735-625.82" p-id="2868"></path></svg>
                         <p>{this.props.title}</p>
                     </div>
                     <SearchBar value={this.state.value} valueChange={this.valueChange.bind(this)} />

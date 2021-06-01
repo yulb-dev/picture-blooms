@@ -2,14 +2,21 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding: 20px 20px 56px 20px;
+  padding: 110px 20px 56px 20px;
+  background-color: #f9f9ff;
+  .outBox {
+    box-sizing: content-box;
+    padding-bottom: 30px;
+    height: 223px;
+  }
   .dynamicItem {
     width: 100%;
+    height: 223px;
     padding: 25px 10px 10px 10px;
-    margin-bottom: 26px;
-    border-radius: 3px;
-    background-color: #eeeeee;
+    border-radius: 20px;
+    background-color: white;
     color: white;
+    box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
     .dynamicItem-top {
       height: 100px;
       width: 100%;
@@ -32,46 +39,30 @@
       p {
         padding-left: 13px;
         width: 50%;
-        color: black;
+        color: #152035;
         font-size: 18px;
         font-weight: bold;
       }
       p:last-child {
-        color: rgb(138, 138, 138);
+        color: #506172;
         font-size: 14px;
         font-weight: normal;
       }
     }
   }
-  .top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: white;
-    margin-bottom: 40px;
-    svg {
-      fill: white;
-      width: 22px;
-    }
-    p {
-      font-size: 20px;
-      line-height: 20px;
-      margin-left: 30px;
-      color: rgb(212, 212, 212);
-    }
-  }
   .dynamicItem-center {
     display: flex;
     align-items: center;
-    border-top: 1px solid rgb(216, 216, 216);
-    border-bottom: 1px solid rgb(216, 216, 216);
-    color: rgb(138, 138, 138);
+    border-top: 1px solid #50617242;
+    border-bottom: 1px solid #50617242;
+    color: #f67280;
     font-size: 18px;
     line-height: 18px;
     padding: 10px 0;
     margin: 11px 0;
+    font-weight: 700;
     svg {
-      fill: rgb(138, 138, 138);
+      fill: #f67280;
       width: 18px;
       height: 18px;
       margin: 0 6px 0 25px;
@@ -91,5 +82,20 @@
       margin: 0 6px 0 20px;
       border-radius: 4px;
     }
+  }
+}
+.isDel {
+  height: 0;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: all 0.4s;
+  opacity: 0;
+  border-radius: 20px;
+  img {
+    transition: all 0.4s;
+    height: 0;
   }
 }

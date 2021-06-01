@@ -25,7 +25,7 @@ body,
     transform: translateX(-50%);
     padding: 10px 20px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     line-height: 16px;
     color: rgb(58, 58, 58);
@@ -35,6 +35,7 @@ body,
     animation: mymove 0.3s infinite;
     animation-iteration-count: 1;
     border: 1px solid rgb(207, 207, 207);
+    box-sizing: content-box;
   }
   @keyframes mymove {
     from {

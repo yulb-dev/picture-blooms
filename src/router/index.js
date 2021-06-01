@@ -4,6 +4,7 @@ import Login from '../views/login'
 import Registered from '../views/registered'
 import SetUp from '../views/SetUp'
 import DetailsPage from '../views/DetailsPage'
+import PersonalSpace from '../views/PersonalSpace'
 import { Redirect } from 'react-router-dom';
 import { increment, setUp, deleteIdol, becomeIdol, becomeFavorite, deleteFavorite, publishAnArticle } from '../features/counter/counterSlice'
 import { connect } from 'react-redux'
@@ -37,6 +38,7 @@ const routes = [
     { path: '/registered', component: connect(mapStateToProps, mapDispatchToProps)(Registered) },
     { path: '/setUp', component: connect(mapStateToProps, mapDispatchToProps)(SetUp) },
     { path: '/detailsPage', component: connect(mapStateToProps, mapDispatchToProps)(DetailsPage) },
+    { path: '/personalSpace/:userid', component: connect(mapStateToProps, mapDispatchToProps)(PersonalSpace) },
 
 
 ]

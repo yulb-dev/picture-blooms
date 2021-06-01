@@ -65,7 +65,8 @@ class ListItem extends Component {
     goDetails(history) {
         history.push({ pathname: '/detailsPage', query: { cardId: this.props.cardId } })
     }
-    deleteFavorite() {
+    deleteFavorite(e) {
+        e.stopPropagation()
         this.setState({ isDelete: true })
         alertBox("删除成功")
         setTimeout(() => {

@@ -1,0 +1,51 @@
+.isborder {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.topbar {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #506172;
+  padding: 20px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+  svg {
+    fill: #506172;
+    width: 25px;
+  }
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-left: 10px;
+    letter-spacing: 0.1rem;
+  }
+  p:first-letter {
+    color: #f67280;
+  }
+}
+.toTopNavBar {
+  width: 45px;
+  height: 45px;
+  background-color: #f67280;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  border-radius: 50%;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  svg {
+    fill: white;
+    height: 22px;
+  }
+}

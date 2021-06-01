@@ -1,0 +1,79 @@
+.personalSpaceCard {
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 60px;
+  background-color: white;
+  box-shadow: 0 5px 20px 0 rgba(69, 67, 96, 0.1);
+  border-radius: 20px;
+  .main-src {
+    width: 100%;
+    display: block;
+    transform: translateY(-60px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+  }
+  .labels {
+    transform: translateY(-30px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    span {
+      padding: 0 15px;
+      font-size: 13px;
+      background-color: #f67280;
+      color: white;
+      line-height: 26px;
+      display: block;
+      border-radius: 20px;
+      font-weight: 800;
+      margin-right: 10px;
+      letter-spacing: 0.1rem;
+    }
+  }
+  h5 {
+    font-family: 'Muli', sans-serif;
+    font-weight: 900;
+    line-height: 1.4;
+    color: #152035;
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.1rem;
+    transform: translateY(-10px);
+    margin-bottom: 3px;
+  }
+  .content {
+    line-height: 1.5;
+    font-size: 16px;
+    color: #506172;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .userMessage {
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 7px;
+      border-radius: 50%;
+    }
+    span {
+      width: 4px;
+      height: 4px;
+      background-color: #f67280;
+      border-radius: 50%;
+      margin: 0 15px;
+    }
+    p {
+      font-size: 13px;
+      color: #506172;
+      font-weight: 500;
+    }
+  }
+}

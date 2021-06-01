@@ -24,6 +24,9 @@ export const counterSlice = createSlice({
         publishAnArticle: (state, id) => {
             state.user.dynamic.push(id.payload)
         },
+        delDynamic: (state, id) => {
+            state.user.dynamic.splice(id.payload, 1)
+        },
         setUp: (state, data) => {
             const { name, gender, introduction, avatar } = data.payload
             state.user.name = name
@@ -36,6 +39,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, deleteFavorite, setUp, deleteIdol, becomeIdol, becomeFavorite, publishAnArticle } = counterSlice.actions
+export const { delDynamic, increment, deleteFavorite, setUp, deleteIdol, becomeIdol, becomeFavorite, publishAnArticle } = counterSlice.actions
 
 export default counterSlice.reducer

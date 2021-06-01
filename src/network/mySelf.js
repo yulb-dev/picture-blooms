@@ -35,3 +35,7 @@ export function delIdol(data) {
 export function pushIdol(data) {
     return mySelf.get('/pushIdol', { params: data })
 }
+
+export function pullDynamic(id) {
+    return mySelf.get('/pullDynamic', { params: { id } })
+}

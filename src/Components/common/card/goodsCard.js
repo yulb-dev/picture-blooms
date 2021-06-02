@@ -28,7 +28,9 @@ class GoodsCard extends Component {
                             >
                                 <div className='box'>
                                     <div className="imgBox">
-                                        <img src={imgsrc} alt='img' ref={this.Myimg} />
+                                        <div className='imBox-div'>
+                                            <img src={imgsrc} alt='img' ref={this.Myimg} />
+                                        </div>
                                     </div>
                                     <div className='cardLabels'>{labels.map((item, index) => <span key={index} style={{ backgroundColor: color[index] }}>{item}</span>)}{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</div>
                                     <h1 className='cardTitle'>{title}</h1>

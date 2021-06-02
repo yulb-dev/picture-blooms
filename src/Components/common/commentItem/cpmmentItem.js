@@ -14,7 +14,7 @@ class CommentItem extends Component {
             const { name, avatar, ctime, content } = this.state
             let date = new Date(ctime)
             return (
-                <div className='commentItem'>
+                <div className='commentItem' onClick={this.goPersonalSpace.bind(this)}>
                     <img src={avatar} alt='useravatar' />
                     <div className='information'>
                         <p>{name}</p>
@@ -28,6 +28,9 @@ class CommentItem extends Component {
             )
         }
         return null
+    }
+    goPersonalSpace() {
+        this.props.goPersonalSpace(this.state.userid)
     }
 }
 

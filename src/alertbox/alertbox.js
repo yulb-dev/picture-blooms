@@ -11,7 +11,7 @@ function promptBox(message) {
     let s = setTimeout(() => {
         box.remove()
         clearTimeout(s)
-    }, 1500);
+    }, 1200);
 
 }
 

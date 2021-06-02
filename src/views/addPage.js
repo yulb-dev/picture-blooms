@@ -141,9 +141,9 @@ class AddPage extends Component {
                 throw (data)
             }
             else {
-                alertBox('发表成功！')
                 this.props.publishAnArticle(data)
-                this.props.history.push('/home')
+                this.props.history.push('/myself')
+                alertBox('发表成功！')
             }
         })
     }

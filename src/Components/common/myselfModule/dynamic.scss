@@ -4,6 +4,8 @@
   overflow: auto;
   padding: 110px 20px 56px 20px;
   background-color: #f9f9ff;
+  position: relative;
+  z-index: 99;
   .outBox {
     box-sizing: content-box;
     padding-bottom: 30px;
@@ -79,7 +81,7 @@
       font-weight: 600;
       padding: 3px 8px;
       border: 1px solid rgb(138, 138, 138);
-      margin: 0 6px 0 20px;
+      margin: 0 10px 0 20px;
       border-radius: 4px;
     }
   }

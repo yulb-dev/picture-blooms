@@ -63,7 +63,9 @@ class GoodsCard extends Component {
         )
     }
     goDetails(history) {
-        history.push({ pathname: '/detailsPage', query: { cardId: this.props.message._id } })
+
+        history.push(`/detailsPage/${this.props.message._id}`)
+        // history.push({ pathname: '/detailsPage', query: { cardId: this.props.message._id } })
     }
     stop(e) {
         e.stopPropagation();

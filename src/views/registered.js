@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { isRegistered } from '../network/registered'
+import Notuploaded from '../image/avatar.png'
 import '../scss/registered.scss'
 import beforeRouteUpdate from '../router/beforeRouteUpdate'
 import alertBox from '../alertbox/alertbox'
@@ -9,7 +10,7 @@ class Registered extends Component {
         super(props)
         beforeRouteUpdate.call(this)
         this.state = {
-            avatar: 'http://localhost:6060/img/userAvatar/avatar.png',
+            avatar: Notuploaded,
             regName: /^[a-zA-Z0-9_-]{4,16}$/,
             regPassword: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
             username: '',

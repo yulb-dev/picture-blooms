@@ -37,7 +37,7 @@ const routes = [
     { path: '/login', component: connect(mapStateToProps, mapDispatchToProps)(Login) },
     { path: '/registered', component: connect(mapStateToProps, mapDispatchToProps)(Registered) },
     { path: '/setUp', component: connect(mapStateToProps, mapDispatchToProps)(SetUp) },
-    { path: '/detailsPage', component: connect(mapStateToProps, mapDispatchToProps)(DetailsPage) },
+    { path: '/detailsPage/:cardid', component: connect(mapStateToProps, mapDispatchToProps)(DetailsPage) },
     { path: '/personalSpace/:userid', component: connect(mapStateToProps, mapDispatchToProps)(PersonalSpace) },
 
 

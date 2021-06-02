@@ -4,6 +4,7 @@ import { Consumer } from "../../../App";
 import { delDynamic } from '../../../features/counter/counterSlice'
 import { connect } from 'react-redux'
 import { pullDynamic } from '../../../network/mySelf'
+import { OpenrequestBox, CLoserequestBox } from '../../../alertbox/BeforerequestBox'
 import alertBox from '../../../alertbox/alertbox'
 
 
@@ -23,8 +24,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 class DynamicItem extends Component {
     constructor(props) {
         super(props)
+        OpenrequestBox()
         getDynamic(this.props.cardId).then((data) => {
             this.setState({ ...data, isDel: false })
+            CLoserequestBox()
         })
     }
     render() {
@@ -53,7 +56,7 @@ class DynamicItem extends Component {
 
                                         </div>
                                         <div className='dynamicItem-bottom'>
-                                            <p>编辑</p>
+                                            {/* <p>编辑</p> */}
                                             <p onClick={this.delDynamic.bind(this)}>删除</p>
                                         </div>
                                     </div>
@@ -82,7 +85,8 @@ class DynamicItem extends Component {
         })
     }
     goDetails(history) {
-        history.push({ pathname: '/detailsPage', query: { cardId: this.props.cardId } })
+        history.push(`/detailsPage/${this.props.cardId }`)
+        // history.push({ pathname: '/detailsPage', query: { cardId: this.props.cardId } })
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DynamicItem)

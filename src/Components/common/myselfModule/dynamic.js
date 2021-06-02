@@ -6,6 +6,7 @@ import './dynamic.scss'
 class Dynamic extends Component {
     constructor(props) {
         super(props)
+        this.MyComponent = 0
     }
     render() {
         return (

@@ -68,12 +68,11 @@
     p {
       padding: 0 0 6px 0;
     }
-    position: fixed;
+    position: absolute;
     padding: 0 35px;
     bottom: 30px;
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     ul {
       list-style: none; /*去掉小圆点*/
       li {

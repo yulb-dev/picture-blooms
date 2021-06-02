@@ -51,6 +51,11 @@
       line-height: 23px;
       height: 100%;
       color: #152035;
+      white-space: pre-line;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
       span {
         font-size: 14px;
         color: rgb(117, 117, 117);

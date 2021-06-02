@@ -2,17 +2,20 @@ import { Component } from 'react'
 import { getCardList, isRefresh } from '../network/home'
 import GoodsCardLIst from '../Components/content/MainCardList/GoodsCardList'
 import HomeSearchBar from '../Components/content/MainhomeSearchBar/New'
+import { OpenrequestBox, CLoserequestBox } from '../alertbox/BeforerequestBox'
 import '../scss/home.scss'
 
 class Home extends Component {
     constructor(props) {
         super(props)
+        OpenrequestBox()
         this.state = {
             page: 1,
             cardList: []
         }
         getCardList(this.state.page).then((data) => {
             this.setState({ cardList: data })
+            CLoserequestBox()
         })
     }
     render() {

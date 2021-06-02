@@ -24,6 +24,23 @@
       font-weight: 900;
       color: #152035;
       letter-spacing: 0.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        height: 25px;
+        margin: 0 12px;
+        transition: all 0.3s;
+      }
+      .blue {
+        fill: blue;
+      }
+      .pink {
+        fill: rgb(255, 108, 132);
+      }
+      .green {
+        fill: rgb(0, 211, 193);
+      }
     }
     .labels {
       display: flex;

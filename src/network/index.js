@@ -4,7 +4,6 @@ const port = 'http://localhost:6060'
 
 const CardListReq = axios.create({
     baseURL: port + '/home',
-    timeout: 1000,
     withCredentials: true
 });
 
@@ -17,7 +16,6 @@ const mySelf = axios.create({
 //注册页面
 const Registered = axios.create({
     baseURL: port + '/registered',
-    timeout: 1000,
     withCredentials: true,
     headers: { 'Content-Type': 'multipart/form-data' },
 });
@@ -31,7 +29,6 @@ const Login = axios.create({
 
 const Details = axios.create({
     baseURL: port + '/details',
-    timeout: 1000,
     withCredentials: true,
 });
 

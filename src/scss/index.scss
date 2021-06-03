@@ -31,10 +31,9 @@ body,
     color: rgb(58, 58, 58);
     background-color: #ffffff;
     text-align: center;
-    box-shadow: 0px 0px 5px 1px rgb(209, 209, 209);
+    box-shadow: 0px 0px 5px 1px rgb(219, 219, 219);
     animation: mymove 0.3s infinite;
     animation-iteration-count: 1;
-    border: 1px solid rgb(207, 207, 207);
     box-sizing: content-box;
   }
   @keyframes mymove {
@@ -132,16 +131,6 @@ $offset: $lat - $thickness;
   top: 0;
   z-index: 999;
   background-color: rgba(245, 245, 245, 0.473);
-  // p {
-  //   position: absolute;
-  //   left: 50%;
-  //   top: 50%;
-  //   transform: translate(-50%, 29px);
-  //   color: #f67280;
-  //   font-size: 18px;
-  //   font-weight: 700;
-  //   letter-spacing: 0.1rem;
-  // }
 }
 .loader {
   position: absolute;

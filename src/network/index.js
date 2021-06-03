@@ -9,7 +9,6 @@ const CardListReq = axios.create({
 
 const mySelf = axios.create({
     baseURL: port + '/mySelf',
-    timeout: 1000,
     withCredentials: true,
 });
 
@@ -23,7 +22,6 @@ const Registered = axios.create({
 //登录页面
 const Login = axios.create({
     baseURL: port + '/login',
-    timeout: 1000,
     withCredentials: true,
 });
 
@@ -34,7 +32,6 @@ const Details = axios.create({
 
 const PersonalSpace = axios.create({
     baseURL: port + '/personalSpace',
-    timeout: 1000,
     withCredentials: true,
 });
 

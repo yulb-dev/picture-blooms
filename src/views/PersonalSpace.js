@@ -30,7 +30,7 @@ class PersonalSpace extends Component {
         const { avatar, name, dynamic, idol, fans, introduction, gender } = this.state
         return (
             <div className='PersonalSpace'>
-                <TopBar title='Home' goBack={this.goBack.bind(this)} />
+                <TopBar title='Back' goBack={this.goBack.bind(this)} />
                 <div className='Personal-information'>
                     <img src={avatar} alt='avatar' />
                     <h6>

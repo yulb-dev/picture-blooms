@@ -22,6 +22,11 @@ class DetailsPage extends Component {
             }
             const { cardid } = this.props.match.params
             getMessage(cardid).then((data) => {
+                if (!data.notdel) {
+                    alertBox('文章已删除')
+                    this.props.history.replace('/myself')
+                    return
+                }
                 this.setState({ ...data })
             })
         }

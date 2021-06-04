@@ -19,6 +19,7 @@ class PersonalSpace extends Component {
                 throw data
             }
             this.setState({ ...data })
+            CLoserequestBox()
         })
     }
     render() {

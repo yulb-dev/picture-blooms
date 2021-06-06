@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Provider value={this.props.history}>
         <div className='App'>
-          <Home className={pathname === '/home' ? 'home' : 'home no'} />
+          <Home className={(pathname === '/home' || pathname === '/') || pathname.indexOf('index.html') > -1 ? 'home' : 'home no'} />
           <Switch>
             {routes.map((item) =>
               <Route {...item} key={item.path} />

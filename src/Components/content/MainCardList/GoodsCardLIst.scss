@@ -86,16 +86,21 @@
     .cardLabels {
       color: #6d6d6d;
       font-size: 15px;
-      line-height: 15px;
-      text-align: right;
-      padding-right: 20px;
-      transform: translateY(-10px);
+      justify-content: flex-end;
+      padding: 0 30px;
+      align-items: center;
+      transform: translateY(-6px);
+      display: flex;
+      flex-wrap: wrap;
       span {
+        letter-spacing: 0.1rem;
+        line-height: 15px;
         padding: 6px 10px;
         border-radius: 4px;
         color: white;
         font-weight: bold;
         margin-right: 15px;
+        margin-bottom: 6px;
         display: inline-block;
         font-size: 13px;
       }

@@ -6,9 +6,9 @@ class UserNotLogin extends Component {
     render() {
         return (
             <div className='Myself-not-login'>
-                <img src={imgsrc} alt='message' width='100%' />
+                <img src='http://39.107.98.159:6060/img/background/message.bdb554e0.png' alt='message' width='100%' />
                 <p className='title'>来  Picture Blooms</p>
-                <p className='title2'>欢迎光临我的生活</p>
+                <p className='title2'>看你想看</p>
                 <div className='registered'>
                     <p onClick={this.toRegistered.bind(this, false)}>
                         注册

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import UserNotLogin from '../Components/content/MainUserNotLogin/userNotLogin'
 import ListItem from '../Components/common/border/ListItem'
 import MainDynamic from '../Components/common/myselfModule/dynamic'
-// import MainIdol from '../Components/common/myselfModule/idol'
 import MyselfModel from '../Components/common/myselfModule/IdolAndFans'
 import { getUser } from '../network/mySelf'
 import { Route, Switch } from 'react-router-dom';

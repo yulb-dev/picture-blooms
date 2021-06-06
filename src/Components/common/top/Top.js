@@ -23,7 +23,7 @@ class TopBar extends Component {
                     (history) => (
                         <>
                             <div className={isborder ? 'topbar isborder' : 'topbar'} ref={this.My}>
-                                <svg t="1622294932600" onClick={this.props.goBack} className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2867"><path d="M398.259 312.832V85.348L0.007 483.503 398.259 881.82V648.502c284.4 0 483.565 91.004 625.735 290.15-56.838-284.472-227.502-568.82-625.735-625.82" p-id="2868"></path></svg>
+                                <svg t="1622294932600" onClick={this.goBack.bind(this, history)} className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2867"><path d="M398.259 312.832V85.348L0.007 483.503 398.259 881.82V648.502c284.4 0 483.565 91.004 625.735 290.15-56.838-284.472-227.502-568.82-625.735-625.82" p-id="2868"></path></svg>
                                 <p>{title}</p>
                             </div>
                             <div

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { isRegistered } from '../network/registered'
 import Notuploaded from '../image/avatar.png'
+import TopBar from '../Components/common/top/Top'
 import '../scss/registered.scss'
 import beforeRouteUpdate from '../router/beforeRouteUpdate'
 import alertBox from '../alertbox/alertbox'
@@ -10,7 +11,7 @@ class Registered extends Component {
         super(props)
         beforeRouteUpdate.call(this)
         this.state = {
-            avatar: Notuploaded,
+            avatar: 'http://39.107.98.159:6060/img/userAvatar/avatar.png',
             regName: /^[a-zA-Z0-9_-]{4,16}$/,
             regPassword: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
             username: '',
@@ -22,8 +23,9 @@ class Registered extends Component {
     render() {
         return (
             <div className='main-registered'>
+                <TopBar title='Back' />
                 <h2>Welcome Back,</h2>
-                <p>欢迎来到注册页</p>
+                <p className='hint'>欢迎来到注册页</p>
                 <div className='file'>
                     <img src={this.state.avatar} alt='avatar' />
                     <input type="file" id="file" onChange={this.inputChange.bind(this)} name="userAvatar" multiple accept="image/png, image/gif, image/jpeg" />

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import bgImage from '../image/message.png'
-import Notuploaded from '../image/图片上传.png'
 import { getUser } from '../network/mySelf'
 import { pushCard } from '../network/registered'
 import alertBox from '../alertbox/alertbox'
@@ -12,7 +10,7 @@ class AddPage extends Component {
         super(props)
         this.Labelinput = React.createRef()
         this.state = {
-            imgsrc: Notuploaded,
+            imgsrc: 'http://39.107.98.159:6060/img/background/imgUpdate.4ac83675.png',
             file: null,
             title: '',
             content: '',
@@ -58,7 +56,7 @@ class AddPage extends Component {
                                         className={isSpin ? 'open' : ''}
                                         type="text"
                                         name='labelsText'
-                                        maxLength='6'
+                                        maxLength='8'
                                         value={labelsText}
                                         onChange={this.valueChange.bind(this, 'labelsText')}
                                         ref={this.Labelinput}
@@ -102,7 +100,7 @@ class AddPage extends Component {
         else {
             return (
                 <div className='AddPage'>
-                    <img src={bgImage} className='bgImage' alt='bgImage' />
+                    <img src='http://39.107.98.159:6060/img/background/message.bdb554e0.png' className='bgImage' alt='bgImage' />
                     <p className='notLogin' onClick={this.toLogin.bind(this)}>先去登录吧</p>
                 </div>
             )

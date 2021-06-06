@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { getIdol } from '../../../network/mySelf'
 import { deleteIdol, becomeIdol } from '../../../features/counter/counterSlice'
 import { connect } from 'react-redux'
-import { delIdol, pushIdol } from '../../../network/mySelf'
 import { NavLink } from 'react-router-dom'
-import promptBox from '../../../alertbox/alertbox'
 
 const mapStateToProps = (state) => {
     return {
@@ -35,7 +33,7 @@ class FansItem extends Component {
     render() {
         const { isMutualfans } = this.props
         if (this.state && this.state.name.indexOf(this.props.value) > -1) {
-            const { avatar, name, introduction, isDel, _id, notOk } = this.state
+            const { avatar, name, introduction, _id, notOk } = this.state
             return (
                 <NavLink to={`/personalSpace/${_id}`}>
                     <div className='idol-item'>
@@ -72,32 +70,8 @@ class FansItem extends Component {
         }
         else {
             //关注
-            console.log('关注')
             this.props.AddIdol()
         }
     }
-    // removeIdol(e) {
-    //     e.preventDefault()
-    //     promptBox("已取消关注")
-    //     this.setState({ isDel: true })
-    //     setTimeout(() => {
-    //         this.props.deleteIdol(this.props.i)
-    //     }, 300);
-    //     delIdol({ userid: this.props.user._id, idolid: this.props.userId }).then((data) => {
-    //         if (data.keyValue) {
-    //             throw (data)
-    //         }
-    //     })
-    // }
-    // becomeIdol(e) {
-    //     e.preventDefault()
-    //     this.props.becomeIdol(this.props.userId)
-    //     promptBox("已关注")
-    //     pushIdol({ userid: this.props.user._id, idolid: this.props.userId }).then((data) => {
-    //         if (data.keyValue) {
-    //             throw (data)
-    //         }
-    //     })
-    // }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FansItem)

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { isLogin } from '../network/login'
 import '../scss/Login.scss'
 import notLoginImg from '../image/notLogin.png'
+import TopBar from '../Components/common/top/Top'
 import beforeRouteUpdate from '../router/beforeRouteUpdate'
 import promptBox from '../alertbox/alertbox'
 
@@ -18,7 +19,8 @@ class Login extends Component {
     render() {
         return (
             <div className='Login'>
-                <img src={notLoginImg} alt='notLoginImg' width='100%' />
+                <TopBar title='Back' />
+                <img src='http://39.107.98.159:6060/img/background/notLogin.94990a65.png' alt='notLoginImg' width='100%' />
                 <div className='message'>
                     <input type='text' name='username' onChange={this.nameChange.bind(this)} placeholder='用户名' value={this.state.username} />
                 </div>

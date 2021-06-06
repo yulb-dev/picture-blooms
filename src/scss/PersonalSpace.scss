@@ -42,24 +42,6 @@
         fill: rgb(0, 211, 193);
       }
     }
-    .labels {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-      span {
-        padding: 0 10px;
-        font-size: 13px;
-        line-height: 21px;
-        font-weight: 700;
-        color: white;
-        background-color: #f67280;
-        border-radius: 16px;
-        margin: 0 6px;
-        letter-spacing: 0.1rem;
-      }
-    }
     p {
       line-height: 1.5;
       font-size: 16px;

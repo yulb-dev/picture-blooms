@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import TopBar from '../Components/common/top/Top'
 import Card from '../Components/common/personalSpaceCard/personalSpaceCard'
 import { getUser } from '../network/personalSpace'
-import { OpenrequestBox } from '../alertbox/BeforerequestBox'
 import '../scss/PersonalSpace.scss'
 
 
@@ -13,13 +12,12 @@ class PersonalSpace extends Component {
             this.props.history.replace('/myself')
             return
         }
-        OpenrequestBox()
         getUser(this.props.match.params.userid).then((data) => {
             if (data.keyValue) {
                 throw data
             }
-            this.setState({ ...data })
-            CLoserequestBox()
+            const { user, dynamicList } = data
+            this.setState({ ...user, dynamicList })
         })
     }
     render() {
@@ -28,10 +26,10 @@ class PersonalSpace extends Component {
                 <div className='PersonalSpace'></div>
             )
         }
-        const { avatar, name, dynamic, idol, fans, introduction, gender } = this.state
+        const { avatar, name, dynamic, idol, fans, introduction, gender, dynamicList } = this.state
         return (
             <div className='PersonalSpace'>
-                <TopBar title='Back' goBack={this.goBack.bind(this)} />
+                <TopBar title='Back' />
                 <div className='Personal-information'>
                     <img src={avatar} alt='avatar' />
                     <h6>
@@ -54,8 +52,14 @@ class PersonalSpace extends Component {
                 </div>
                 <div className='crad'>
                     {
-                        dynamic.map((id) => (
-                            <Card cardId={id} key={id} goDetails={this.goDetails.bind(this)} />
+                        dynamicList.map((item) => (
+                            <Card
+                                {...item}
+                                name={name}
+                                avatar={avatar}
+                                key={item._id}
+                                goDetails={this.goDetails.bind(this)}
+                            />
                         ))
                     }
                 </div>
@@ -64,10 +68,6 @@ class PersonalSpace extends Component {
     }
     goDetails(cardId) {
         this.props.history.push(`/detailsPage/${cardId}`)
-        // this.props.history.push({ pathname: '/detailsPage', query: { cardId } })
-    }
-    goBack() {
-        this.props.history.goBack()
     }
 }
 

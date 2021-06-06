@@ -32,7 +32,14 @@ class GoodsCard extends Component {
                                             <img src={imgsrc} alt='img' ref={this.Myimg} />
                                         </div>
                                     </div>
-                                    <div className='cardLabels'>{labels.map((item, index) => <span key={index} style={{ backgroundColor: color[index] }}>{item}</span>)}{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</div>
+                                    <div className='cardLabels'>
+                                        {labels.map((item, index) =>
+                                            <span key={index} style={{ backgroundColor: color[index] }}>
+                                                {item}
+                                            </span>
+                                        )}
+                                        <span style={{ color: 'rgb(83, 83, 83)', fontSize: '14px' }}>{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</span>
+                                    </div>
                                     <h1 className='cardTitle'>{title}</h1>
                                     <p className='cardContent'>{content}</p>
                                     <div className='cardLikes'>

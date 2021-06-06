@@ -15,19 +15,19 @@
   .labels {
     transform: translateY(-30px);
     width: 100%;
-    display: flex;
-    align-items: center;
     span {
-      padding: 0 15px;
-      font-size: 13px;
       background-color: #f67280;
-      color: white;
-      line-height: 26px;
-      display: block;
+      color: #fff;
+      padding: 3px 15px;
+      display: inline-block;
+      text-align: center;
+      font-size: 14px;
       border-radius: 20px;
       font-weight: 800;
-      margin-right: 10px;
-      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+      transition: all 0.5s ease-in-out;
+      margin-right: 15px;
+      margin-bottom: 10px;
     }
   }
   h5 {

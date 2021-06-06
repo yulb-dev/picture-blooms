@@ -22,7 +22,7 @@ export const counterSlice = createSlice({
             state.user.idol.push(id.payload)
         },
         publishAnArticle: (state, id) => {
-            state.user.dynamic.push(id.payload)
+            state.user.dynamic.unshift(id.payload)
         },
         delDynamic: (state, id) => {
             state.user.dynamic.splice(id.payload, 1)

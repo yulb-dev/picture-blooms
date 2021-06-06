@@ -1,19 +1,9 @@
 import React, { Component } from 'react'
-import { getMessage } from '../../../network/details'
 import './personalSpaceCard.scss'
 
 class Card extends Component {
-    constructor(props) {
-        super(props)
-        getMessage(this.props.cardId).then((data) => {
-            this.setState({ ...data })
-        })
-    }
     render() {
-        if (!this.state) {
-            return null
-        }
-        const { imgsrc, labels, title, content, useravatar, username, ctime } = this.state
+        const { imgsrc, labels, title, content, avatar, name, ctime } = this.props
         let date = new Date(ctime)
         let time = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
         return (
@@ -29,8 +19,8 @@ class Card extends Component {
                 <h5>{title}</h5>
                 <p className='content'>{content}</p>
                 <div className='userMessage'>
-                    <img src={useravatar} alt='useravatar' />
-                    <p>{username}</p>
+                    <img src={avatar} alt='useravatar' />
+                    <p>{name}</p>
                     <span></span>
                     <p>{time}</p>
                 </div>
@@ -38,7 +28,7 @@ class Card extends Component {
         )
     }
     goDetails() {
-        this.props.goDetails(this.state._id)
+        this.props.goDetails(this.props._id)
     }
 }
 

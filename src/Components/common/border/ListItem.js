@@ -5,7 +5,7 @@ import { deleteFavorite } from '../../../features/counter/counterSlice'
 import { connect } from 'react-redux'
 import { delFavorite } from '../../../network/mySelf'
 import { Consumer } from "../../../App";
-import deletedImg from '../../../image/已删除.png'
+import deletedImg from '../../../image/isDel.png'
 import alertBox from '../../../alertbox/alertbox'
 
 const mapStateToProps = (state) => {
@@ -61,7 +61,7 @@ class ListItem extends Component {
                                     <div></div>
                                 </div>
                                 <div className='context' >
-                                    <img src={notdel ? imgsrc : deletedImg}
+                                    <img src={notdel ? imgsrc : 'http://39.107.98.159:6060/img/background/isDel.483cc612.png'}
                                         alt='card'
                                         width='100%'
                                         onLoad={this.imgOnload.bind(this)}

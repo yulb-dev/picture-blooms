@@ -16,17 +16,16 @@
     transform: translateY(-30px);
     width: 100%;
     span {
+      padding: 0 15px;
+      font-size: 13px;
       background-color: #f67280;
       color: #fff;
-      padding: 3px 15px;
+      line-height: 26px;
       display: inline-block;
-      text-align: center;
-      font-size: 14px;
       border-radius: 20px;
       font-weight: 800;
-      text-transform: capitalize;
-      transition: all 0.5s ease-in-out;
-      margin-right: 15px;
+      margin-right: 10px;
+      letter-spacing: 0.1rem;
       margin-bottom: 10px;
     }
   }

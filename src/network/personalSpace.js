@@ -10,8 +10,6 @@ PersonalSpace.interceptors.request.use(function (config) {
     return Promise.reject(error);
 });
 
-
-
 PersonalSpace.interceptors.response.use(res => {
     CLoserequestBox()
     return res.data
@@ -19,4 +17,8 @@ PersonalSpace.interceptors.response.use(res => {
 
 export function getUser(id) {
     return PersonalSpace.get('/', { params: { id } })
+}
+
+export function getLabelsInfo(labels) {
+    return PersonalSpace.get('/getLabelsInfo', { params: { labels } })
 }

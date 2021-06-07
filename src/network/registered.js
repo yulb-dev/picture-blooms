@@ -32,3 +32,7 @@ export function pushCard(data) {
     return Registered.post('/pushCard', data)
 }
 
+export function goEdit(data) {
+    return Registered.post('/goEdit', data)
+}
+

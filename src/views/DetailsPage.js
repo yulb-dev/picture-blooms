@@ -82,7 +82,13 @@ class DetailsPage extends Component {
                                 <div className='title'>
                                     {
                                         labels.map((item, index) => (
-                                            <span className='labels' key={index}>{item}</span>
+                                            <span
+                                                onClick={this.goLabelsPage.bind(this, item)}
+                                                className='labels'
+                                                key={index}
+                                            >
+                                                {item}
+                                            </span>
                                         ))
                                     }
                                     <h4>{title}</h4>
@@ -152,6 +158,9 @@ class DetailsPage extends Component {
                 <div className='detailsPage'></div>
             )
         }
+    }
+    goLabelsPage(label) {
+        this.props.history.push(`/labelsPage/${label}`)
     }
     goPersonalSpace(userid) {
         this.props.history.push(`/personalSpace/${userid}`)

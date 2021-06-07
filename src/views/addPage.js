@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import HomeSearchBar from '../Components/content/MainhomeSearchBar/New'
 import { getUser } from '../network/mySelf'
 import { pushCard } from '../network/registered'
 import alertBox from '../alertbox/alertbox'
@@ -31,6 +32,7 @@ class AddPage extends Component {
             const { imgsrc, title, content, labels, labelsText, isSpin } = this.state
             return (
                 <div className='AddPage'>
+                    <HomeSearchBar />
                     <div className='topimg'>
                         <input type="file" id="file" onChange={this.inputChange.bind(this)} name="userAvatar" multiple accept="image/png, image/gif, image/jpeg" />
                         <img src={imgsrc} alt='img' />

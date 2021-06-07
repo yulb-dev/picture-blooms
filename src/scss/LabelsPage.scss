@@ -1,0 +1,22 @@
+.labels-page {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  position: relative;
+  z-index: 99;
+  padding-top: 90px;
+  overflow: auto;
+  background-color: #f9f9ff;
+  h3 {
+    letter-spacing: 0.1rem;
+    font-size: 22px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    color: #152035;
+    span {
+      color: #f67280;
+    }
+  }
+}

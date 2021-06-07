@@ -34,7 +34,11 @@ class GoodsCard extends Component {
                                     </div>
                                     <div className='cardLabels'>
                                         {labels.map((item, index) =>
-                                            <span key={index} style={{ backgroundColor: color[index] }}>
+                                            <span
+                                                key={index}
+                                                style={{ backgroundColor: color[index] }}
+                                                onClick={this.goLabelsPage.bind(this, item, history)}
+                                            >
                                                 {item}
                                             </span>
                                         )}
@@ -71,10 +75,12 @@ class GoodsCard extends Component {
             </Consumer>
         )
     }
+    goLabelsPage(label, history, e) {
+        e.stopPropagation()
+        history.push(`/labelsPage/${label}`)
+    }
     goDetails(history) {
-
         history.push(`/detailsPage/${this.props.message._id}`)
-        // history.push({ pathname: '/detailsPage', query: { cardId: this.props.message._id } })
     }
     stop(e) {
         e.stopPropagation();

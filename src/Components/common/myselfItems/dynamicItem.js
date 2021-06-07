@@ -56,7 +56,7 @@ class DynamicItem extends Component {
 
                                         </div>
                                         <div className='dynamicItem-bottom'>
-                                            {/* <p>编辑</p> */}
+                                            <p onClick={this.goEditPage.bind(this, history)}>编辑</p>
                                             <p onClick={this.delDynamic.bind(this)}>删除</p>
                                         </div>
                                     </div>
@@ -84,9 +84,11 @@ class DynamicItem extends Component {
             }, 400);
         })
     }
+    goEditPage(history) {
+        history.push({ pathname: '/edit', query: { cardid: this.state._id } })
+    }
     goDetails(history) {
-        history.push(`/detailsPage/${this.props.cardId }`)
-        // history.push({ pathname: '/detailsPage', query: { cardId: this.props.cardId } })
+        history.push(`/detailsPage/${this.props.cardId}`)
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(DynamicItem)

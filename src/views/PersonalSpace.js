@@ -43,7 +43,7 @@ class PersonalSpace extends Component {
                                 <svg t="1622010435135" className='pink' viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5345"><path d="M768 682.666667l-170.666667 0 0-12.8c145.066667-38.4 256-170.666667 256-328.533333 0-187.733333-153.6-341.333333-341.333333-341.333333S170.666667 153.6 170.666667 341.333333c0 157.866667 110.933333 290.133333 256 328.533333L426.666667 682.666667 256 682.666667c-46.933333 0-85.333333 38.4-85.333333 85.333333 0 46.933333 38.4 85.333333 85.333333 85.333333l170.666667 0 0 85.333333c0 46.933333 38.4 85.333333 85.333333 85.333333s85.333333-38.4 85.333333-85.333333l0-85.333333 170.666667 0c46.933333 0 85.333333-38.4 85.333333-85.333333C853.333333 721.066667 814.933333 682.666667 768 682.666667zM341.333333 341.333333c0-93.866667 76.8-170.666667 170.666667-170.666667s170.666667 76.8 170.666667 170.666667-76.8 170.666667-170.666667 170.666667S341.333333 435.2 341.333333 341.333333z" p-id="5346"></path></svg>
                         }
                     </h6>
-                    <div className='labels'>
+                    <div className='personlabels'>
                         <span>{dynamic.length}动态</span>
                         <span>{idol.length}关注</span>
                         <span>{fans.length}粉丝</span>
@@ -58,7 +58,6 @@ class PersonalSpace extends Component {
                                 name={name}
                                 avatar={avatar}
                                 key={item._id}
-                                goDetails={this.goDetails.bind(this)}
                             />
                         ))
                     }
@@ -66,8 +65,8 @@ class PersonalSpace extends Component {
             </div>
         )
     }
-    goDetails(cardId) {
-        this.props.history.push(`/detailsPage/${cardId}`)
+    goLabelsPage(label) {
+        this.props.history.push(`/labelsPage/${label}`)
     }
 }
 

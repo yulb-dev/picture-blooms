@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Consumer } from "../../../App";
 import './personalSpaceCard.scss'
 
 class Card extends Component {
@@ -7,28 +8,42 @@ class Card extends Component {
         let date = new Date(ctime)
         let time = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
         return (
-            <div className='personalSpaceCard' onClick={this.goDetails.bind(this)}>
-                <img className='main-src' src={imgsrc} alt='imgsrc' />
-                <div className='labels'>
-                    {
-                        labels.map((item, i) => (
-                            <span key={i}>{item}</span>
-                        ))
-                    }
-                </div>
-                <h5>{title}</h5>
-                <p className='content'>{content}</p>
-                <div className='userMessage'>
-                    <img src={avatar} alt='useravatar' />
-                    <p>{name}</p>
-                    <span></span>
-                    <p>{time}</p>
-                </div>
-            </div>
+            <Consumer>
+                {
+                    (history) => (
+                        <div className='personalSpaceCard' onClick={this.goDetails.bind(this, history)}>
+                            <img className='main-src' src={imgsrc} alt='imgsrc' />
+                            <div className='labels'>
+                                {
+                                    labels.map((item, i) => (
+                                        <span key={i}
+                                            onClick={this.goLabelsPage.bind(this, item, history)}
+                                        >
+                                            {item}
+                                        </span>
+                                    ))
+                                }
+                            </div>
+                            <h5>{title}</h5>
+                            <p className='content'>{content}</p>
+                            <div className='userMessage'>
+                                <img src={avatar} alt='useravatar' />
+                                <p>{name}</p>
+                                <span></span>
+                                <p>{time}</p>
+                            </div>
+                        </div>
+                    )
+                }
+            </Consumer>
         )
     }
-    goDetails() {
-        this.props.goDetails(this.props._id)
+    goLabelsPage(label, history, e) {
+        e.stopPropagation()
+        history.push(`/labelsPage/${label}`)
+    }
+    goDetails(history) {
+        history.push(`/detailsPage/${this.props._id}`)
     }
 }
 

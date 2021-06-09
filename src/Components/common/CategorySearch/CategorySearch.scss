@@ -1,0 +1,33 @@
+.CategorySearch {
+  margin-top: 30px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  .item {
+    display: flex;
+    margin-right: 10px;
+    color: rgb(128, 128, 128);
+    align-items: center;
+    svg {
+      fill: rgb(128, 128, 128);
+      height: 25px;
+      margin-right: 6px;
+      transition: 0.2s all;
+    }
+    p {
+      font-size: 16px;
+      line-height: 25px;
+      font-weight: 700;
+      transition: 0.2s all;
+    }
+  }
+  .isActive {
+    color: #f67280;
+    svg {
+      fill: #f67280;
+    }
+  }
+}

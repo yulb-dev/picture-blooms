@@ -35,4 +35,8 @@ const PersonalSpace = axios.create({
     withCredentials: true,
 });
 
-export { CardListReq, mySelf, Registered, Login, Details, PersonalSpace }
+const DiscoverPage = axios.create({
+    baseURL: port + '/discoverPage',
+});
+
+export { CardListReq, mySelf, Registered, Login, Details, PersonalSpace, DiscoverPage }

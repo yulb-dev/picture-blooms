@@ -1,0 +1,32 @@
+.MainSearchUsers {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #f9f9ff;
+  padding: 90px 30px 30px 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .result-box {
+    width: 100%;
+    background-color: #f9f9ff;
+    position: absolute;
+    left: 0;
+    display: flex;
+    transition: 0.3s all;
+    .result-user {
+      width: 100%;
+      padding: 0 30px;
+      flex-shrink: 0;
+      width: 100%;
+      .wln {
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+        transform: translateY(36px);
+      }
+    }
+  }
+}

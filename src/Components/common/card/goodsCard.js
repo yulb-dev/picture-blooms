@@ -61,8 +61,6 @@ class GoodsCard extends Component {
                                             <p> 来自于</p>
                                             <span></span>
                                             <p>{this.state.username}</p>
-
-
                                             <img src={this.state.useravatar} alt='useravatar' />
                                         </NavLink>
                                     </div>

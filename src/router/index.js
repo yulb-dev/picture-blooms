@@ -7,6 +7,7 @@ import DetailsPage from '../views/DetailsPage'
 import PersonalSpace from '../views/PersonalSpace'
 import Edit from '../views/EditPage'
 import LabelsPage from '../views/LabelsPage'
+import Discover from '../views/DiscoverPage'
 import { Redirect } from 'react-router-dom';
 import { increment, setUp, deleteIdol, becomeIdol, becomeFavorite, deleteFavorite, publishAnArticle } from '../features/counter/counterSlice'
 import { connect } from 'react-redux'
@@ -34,6 +35,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const routes = [
     { path: '/', exact: true, render() { return <Redirect to="/home" /> } },
     // { path: '/home', component: Home },
+    { path: '/discover', component: connect(mapStateToProps, mapDispatchToProps)(Discover) },
     { path: '/addPage', component: connect(mapStateToProps, mapDispatchToProps)(addPage) },
     { path: '/myself', component: connect(mapStateToProps, mapDispatchToProps)(Myself) },
     { path: '/login', component: connect(mapStateToProps, mapDispatchToProps)(Login) },

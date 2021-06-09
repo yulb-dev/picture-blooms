@@ -18,7 +18,7 @@ class NavBarItem extends Component {
             </Consumer >
         )
     }
-    changeRouter(push, pathname) {
+    changeRouter(push, pathname, e) {
         push(pathname)
         this.props.isActive(this.props.num)
     }

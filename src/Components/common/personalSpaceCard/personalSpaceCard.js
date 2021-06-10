@@ -43,7 +43,13 @@ class Card extends Component {
         history.push(`/labelsPage/${label}`)
     }
     goDetails(history) {
-        history.push(`/detailsPage/${this.props._id}`)
+        const { goDetailsPage, _id } = this.props
+        if (goDetailsPage) {
+            goDetailsPage(_id)
+            return
+        }
+
+        history.push(`/detailsPage/${_id}`)
     }
 }
 

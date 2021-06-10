@@ -62,6 +62,7 @@ class MainDiscover extends Component {
                                 name={item.userid.name}
                                 avatar={item.userid.avatar}
                                 key={item._id}
+                                goDetailsPage={this.goDetailsPage.bind(this)}
                             />
                         ))
                     }
@@ -69,12 +70,15 @@ class MainDiscover extends Component {
             </>
         )
     }
+    goDetailsPage(id) {
+        this.props.history.push(`/discover/detailsPage/${id}`)
+    }
     goSearch(e) {
         e.preventDefault();
         this.props.history.push('/discover/searchUsers')
     }
     goLabelsPage(label) {
-        this.props.history.push(`/labelsPage/${label}`)
+        this.props.history.push(`/discover/label/${label}`)
     }
     DynamicRefresh() {
         getDiscoverPage().then(({ cardList }) => {

@@ -7,6 +7,23 @@ import { addComment, addFavorite } from '../network/details'
 import { delIdol, pushIdol } from '../network/mySelf'
 import { delFavorite } from '../network/mySelf'
 import '../scss/DetailsPage.scss'
+import { deleteIdol, becomeIdol, becomeFavorite, deleteFavorite } from '../features/counter/counterSlice'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.counter.user
+    }
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        deleteIdol: (...args) => dispatch(deleteIdol(...args)),
+        becomeIdol: (...args) => dispatch(becomeIdol(...args)),
+        becomeFavorite: (...args) => dispatch(becomeFavorite(...args)),
+        deleteFavorite: (...args) => dispatch(deleteFavorite(...args)),
+    }
+};
 
 class DetailsPage extends Component {
     constructor(props) {
@@ -267,4 +284,4 @@ class DetailsPage extends Component {
     }
 }
 
-export default DetailsPage
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsPage)

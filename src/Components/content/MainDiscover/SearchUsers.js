@@ -3,7 +3,7 @@ import UserCard from '../../common/userCard/UserCard'
 import DiscoverSearch from '../../common/DiscoverSearch/DiscoverSearch'
 import TopBar from '../../common/top/Top'
 import Card from '../../common/personalSpaceCard/personalSpaceCard'
-import wln from '../../../image/wuliannan.png'
+// import wln from '../../../image/wuliannan.png'
 import { getUser } from '../../../network/discoverPage'
 import './MainSearchUsers.scss'
 
@@ -12,6 +12,7 @@ class SearchUsers extends Component {
         super(props)
         this.MyResultBox = React.createRef()
         this.state = {
+            wln: 'http://39.107.98.159:6060/img/background/wuliannan.png',
             userList: [],
             cardList: [],
             articleList: [],
@@ -20,7 +21,7 @@ class SearchUsers extends Component {
         }
     }
     render() {
-        const { userList, i, searchValue, cardList, articleList } = this.state
+        const { userList, i, searchValue, cardList, articleList, wln } = this.state
         return (
             <div className='MainSearchUsers'>
                 <TopBar title='Back' />

@@ -1,7 +1,9 @@
 .detailsPage {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: 99;
   background-color: #f9f9ff;
   overflow: auto;

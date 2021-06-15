@@ -33,7 +33,7 @@ npm run build
 项目接口地址：<https://github.com/yulb-dev/picture-blooms-api.git>
 
 ## 效果演示
-这是项目的视频演示地址：<https://www.bilibili.com/video/BV1up4y1i7S5>
+这是项目的视频演示地址：<https://b23.tv/bYco15>
 
 ## 在线演示
 这是项目的在线部署地址：<http://39.107.98.159:3000>

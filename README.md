@@ -36,7 +36,7 @@ npm run build
 这是项目的视频演示地址：<https://www.bilibili.com/video/BV1Mg411g7Hs>
 
 ## 在线演示
-这是项目的在线部署地址：<http://39.107.98.159:3000>
+这是项目的在线部署地址（已停运）：<http://39.107.98.159:3000>
 
 ## 最后
 项目ui界面参考：<http://v.bootstrapmb.com/2021/2/1qkwe9671/index.html>
